@@ -7,10 +7,41 @@
 	<packaging>jar</packaging>
 	<name>dictionary</name>
 	<description>Dict/dictionary is a easy and simple tool for most project.</description>
-	<url>https://github.com</url>
+	<url>https://github.com/air-project/project-dict</url>
 
 
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<maven.test.skip>true</maven.test.skip>
+		<maven.test.failure.ignore>true</maven.test.failure.ignore>
+	</properties>
 
+	<issueManagement>
+		<url>https://github.com/air-project/project-dict/issues</url>
+		<system>GitHub issue</system>
+	</issueManagement>
+	
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+	<developers>
+		<developer>
+			<id>air</id>
+			<name>yh</name>
+			<email>441286376@qq.com</email>
+		</developer>
+	</developers>
+	<scm>
+		<url>git@github.com:air-project/project-dict.git</url>
+		<connection>scm:git:git@github.com:air-project/project-dict.git</connection>
+		<developerConnection>scm:git:git@github.com:air-project/project-dict.git</developerConnection>
+	</scm>
+	
 	<!-- 设定主仓库，按设定顺序进行查找。 -->
 	<repositories>
 		<!-- 如有Nexus私服, 取消注释并指向正确的服务器地址. -->
@@ -19,6 +50,44 @@
 			<name>Oschina Releases</name>
 			<url>http://maven.oschina.net/content/groups/public</url>
 		</repository>
+
+		<repository>
+            <id>java-repos</id>
+            <name>Java Repository</name>
+            <url>http://download.java.net/maven/2/</url>
+        </repository>
+        
+        <repository>
+            <id>springsource-repos</id>
+            <name>SpringSource Repository</name>
+            <url>http://repo.spring.io/release/</url>
+        </repository>
+        
+		<repository>
+			<id>central-repos</id>
+			<name>Central Repository</name>
+			<url>http://repo.maven.apache.org/maven2</url>
+		</repository>
+
+		<repository>
+			<id>central-repos2</id>
+			<name>Central Repository 2</name>
+			<url>http://repo1.maven.org/maven2/</url>
+		</repository>
+
+
+		<repository>
+			<id>activiti-repos</id>
+			<name>Activiti Repository</name>
+			<url>https://maven.alfresco.com/nexus/content/groups/public</url>
+		</repository>
+		
+		<repository>
+			<id>activiti-repos2</id>
+			<name>Activiti Repository 2</name>
+			<url>https://app.camunda.com/nexus/content/groups/public</url>
+		</repository>
+		
 
 	</repositories>
 
@@ -33,14 +102,6 @@
 		</pluginRepository>
 
 	</pluginRepositories>
-
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>1.8</java.version>
-		<maven.test.skip>true</maven.test.skip>
-		<maven.test.failure.ignore>true</maven.test.failure.ignore>
-	</properties>
 
 	<dependencies>
 		<dependency>
@@ -104,4 +165,5 @@
 			</resource>
 		</resources>
 	</build>
+	
 </project>
