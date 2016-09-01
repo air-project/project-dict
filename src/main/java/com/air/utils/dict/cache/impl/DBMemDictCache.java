@@ -9,22 +9,29 @@ import com.air.utils.dict.cache.DBSyncAble;
 import com.air.utils.dict.entity.BaseDict;
 import com.google.common.collect.Maps;
 
+import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
+@NoArgsConstructor
 public class DBMemDictCache extends AbstractDictCache {
 	
 	protected static Map<String,Map<Long,BaseDict>> map = Maps.newHashMap();
 	
 	private DBSyncAble syncAble;
 	
-	
+	public DBMemDictCache(DBSyncAble syncAble)
+	{
+		this.syncAble=syncAble;
+		init();
+	}
 	public DBSyncAble getSyncAble() {
 		return syncAble;
 	}
 
 	public void setSyncAble(DBSyncAble syncAble) {
 		this.syncAble = syncAble;
+		init();
 	}
 
 	public boolean isSync(){
@@ -39,15 +46,7 @@ public class DBMemDictCache extends AbstractDictCache {
 		return null;
 	}
 	
-	
-	
-	public DBMemDictCache(DBSyncAble syncAble)
-	{
-		this.syncAble=syncAble;
-	}
-	
-	
-	public DBMemDictCache(){
+	private void init(){
 		if(isSync()){
 			List<BaseDict> dbList=syncAble.getAllList();
 			if(dbList!=null && !dbList.isEmpty()){

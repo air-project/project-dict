@@ -9,8 +9,10 @@ import com.air.utils.dict.cache.RedisSyncAble;
 import com.air.utils.dict.entity.BaseDict;
 import com.google.common.collect.Maps;
 
+import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 @Slf4j
+@NoArgsConstructor
 public class RedisDictCache extends AbstractDictCache {
 
 	private RedisSyncAble redisSyncAble;
@@ -21,9 +23,6 @@ public class RedisDictCache extends AbstractDictCache {
 	}
 	public void setRedisSyncAble(RedisSyncAble redisSyncAble) {
 		this.redisSyncAble = redisSyncAble;
-	}
-	public RedisDictCache(){
-		
 	}
 	public RedisDictCache(RedisSyncAble redisSyncAble){
 		this.redisSyncAble=redisSyncAble;

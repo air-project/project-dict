@@ -23,25 +23,25 @@ public class BaseDict implements Dict, Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	protected long id; 
+	private long id; 
 	
 	@Column(name="create_user_id")
-	protected long createUserId; // 创建者
+	private long createUserId; // 创建者
 	
 	@Column(name="create_user")
-	protected String createUser="system"; // 创建者
+	private String createUser="system"; // 创建者
 	
 	@Column(name="create_date")
-	protected Date createDate = new Date(); // 创建日期
+	private Date createDate = new Date(); // 创建日期
 
 	@Column(name="update_user_id")
-	protected long updateUserId; // 更新者
+	private long updateUserId; // 更新者
 	
 	@Column(name="update_user")
-	protected String updateUser; // 更新者
+	private String updateUser; // 更新者
 	
 	@Column(name="update_date")
-	protected Date updateDate; // 更新日期
+	private Date updateDate; // 更新日期
 
 	private long attr;  //属性值每次使用这个取值
 

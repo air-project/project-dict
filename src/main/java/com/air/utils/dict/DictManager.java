@@ -68,7 +68,11 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 public final class DictManager {
-
+	private static DictCache cache;
+	
+	private DictManager(){
+		
+	}
 	/**
 	 * 初始化
 	 * @param cache
@@ -77,7 +81,7 @@ public final class DictManager {
 		DictManager.cache=cache;
 		if(!cache.isSync()){
 			System.err.println("没有任何同步接口");
-			System.exit(-1);
+			System.exit(0);
 		}else{
 			if(cache.impType().isInstance(DBSyncAble.class)){
 				log.info("采取的是DB实现");
@@ -86,8 +90,6 @@ public final class DictManager {
 			}
 		}
 	}
-	
-	private static DictCache cache;
 	
 	/**
 	 * 获取数据字典
