@@ -49,3 +49,27 @@ Dict/dictionary is a easy and simple tool for most project.
  *          
  *    如有疑问请参考测试包中的DictManagerTest
  */
+附：
+DROP TABLE IF EXISTS sys_dict_list;
+CREATE TABLE sys_dict_list (
+  id bigint(20) NOT NULL AUTO_INCREMENT,
+  attr bigint(20) NOT NULL,
+  cnLabel varchar(255) DEFAULT NULL,
+  company bigint(20) NOT NULL,
+  create_date datetime DEFAULT NULL,
+  create_user varchar(255) DEFAULT NULL,
+  create_user_id bigint(20) DEFAULT NULL,
+  description varchar(255) DEFAULT NULL,
+  enLabel varchar(255) DEFAULT NULL,
+  enabe bit(1) NOT NULL,
+  parentId bigint(20) NOT NULL,
+  project bigint(20) NOT NULL,
+  remark varchar(255) DEFAULT NULL,
+  sort bigint(20) NOT NULL,
+  type bigint(20) NOT NULL,
+  update_date datetime DEFAULT NULL,
+  update_user varchar(255) DEFAULT NULL,
+  update_user_id bigint(20) DEFAULT NULL,
+  value varchar(255) DEFAULT NULL,
+  PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
