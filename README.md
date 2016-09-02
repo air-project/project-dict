@@ -1,6 +1,15 @@
-# project-dict
-Dict/dictionary is a easy and simple tool for most project.
-/**
+project-dict
+	Dict/dictionary is a easy and simple tool for most project.
+
+maven
+
+	<dependency>
+	  <groupId>com.github.air-project</groupId>
+	  <artifactId>project-dict</artifactId>
+	  <version>0.1</version>
+	</dependency>
+
+
  * 使用如下：
  * 
  * 提供两种实现方式
@@ -9,7 +18,8 @@ Dict/dictionary is a easy and simple tool for most project.
  * 在服务器启动时初始化DictManager.init(new DBMemDictCache(new DBMemDictCacheDemo()));
  * 会加载实体BaseDict对应表到内存中，BaseDict默认采用hibernate配置
  * 
- * 	注意1.如果您的系统也采用hibernate,请在spring配置文件中添加（采用mybatis请忽略这一点）
+ * 	注意
+ * 	1.如果您的系统也采用hibernate,请在spring配置文件中添加（采用mybatis请忽略这一点）
  *  	<property name="packagesToScan">
             <list>
                 <value>com.air.utils.dict.*</value>
@@ -48,28 +58,30 @@ Dict/dictionary is a easy and simple tool for most project.
  *   DictManager.getList(CompanyTest.class)  
  *          
  *    如有疑问请参考测试包中的DictManagerTest
- */
-附：
-DROP TABLE IF EXISTS sys_dict_list;
-CREATE TABLE sys_dict_list (
-  id bigint(20) NOT NULL AUTO_INCREMENT,
-  attr bigint(20) NOT NULL,
-  cnLabel varchar(255) DEFAULT NULL,
-  company bigint(20) NOT NULL,
-  create_date datetime DEFAULT NULL,
-  create_user varchar(255) DEFAULT NULL,
-  create_user_id bigint(20) DEFAULT NULL,
-  description varchar(255) DEFAULT NULL,
-  enLabel varchar(255) DEFAULT NULL,
-  enabe bit(1) NOT NULL,
-  parentId bigint(20) NOT NULL,
-  project bigint(20) NOT NULL,
-  remark varchar(255) DEFAULT NULL,
-  sort bigint(20) NOT NULL,
-  type bigint(20) NOT NULL,
-  update_date datetime DEFAULT NULL,
-  update_user varchar(255) DEFAULT NULL,
-  update_user_id bigint(20) DEFAULT NULL,
-  value varchar(255) DEFAULT NULL,
-  PRIMARY KEY (id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+ *   
+
+ *  附(mysql建表语句)：
+ *  
+ *DROP TABLE IF EXISTS sys_dict_list;
+*	CREATE TABLE sys_dict_list (
+*	  id bigint(20) NOT NULL AUTO_INCREMENT,
+*	  attr bigint(20) NOT NULL,
+*	  cnLabel varchar(255) DEFAULT NULL,
+*	  company bigint(20) NOT NULL,
+*	  create_date datetime DEFAULT NULL,
+*	  create_user varchar(255) DEFAULT NULL,
+*	  create_user_id bigint(20) DEFAULT NULL,
+*	  description varchar(255) DEFAULT NULL,
+*	  enLabel varchar(255) DEFAULT NULL,
+*	  enabe bit(1) NOT NULL,
+*	  parentId bigint(20) NOT NULL,
+*	  project bigint(20) NOT NULL,
+*	  remark varchar(255) DEFAULT NULL,
+*	  sort bigint(20) NOT NULL,
+*	  type bigint(20) NOT NULL,
+*	  update_date datetime DEFAULT NULL,
+*	  update_user varchar(255) DEFAULT NULL,
+*	  update_user_id bigint(20) DEFAULT NULL,
+*	  value varchar(255) DEFAULT NULL,
+*	  PRIMARY KEY (id)
+*	) ENGINE=InnoDB DEFAULT CHARSET=utf8;
