@@ -75,7 +75,7 @@ public final class DictManager {
 	}
 	/**
 	 * 初始化
-	 * @param cache
+	 * @param cache 具体实现类
 	 */
 	public static void init(DictCache cache){
 		DictManager.cache=cache;
@@ -92,32 +92,40 @@ public final class DictManager {
 	}
 	
 	/**
-	 * 获取数据字典
-	 * @param cls
+	 * 
+	 * @param cls 字典
+	 * @param attr 字典属性
+	 * @return 获取数据字典
 	 */
 	public static <T extends BaseDict>  BaseDict getDict(Class<T> cls,long attr) {
 		Map<Long,BaseDict>  tmp = cache.getMap(cls);
 		return tmp.get(attr);
 	}
 	/**
-	 * 获取数据字典Value
-	 * @param cls
+	 * 
+	 * @param cls 字典
+	 * @param attr 字典属性
+	 * @return 获取数据字典Value
 	 */
 	public static <T extends BaseDict>  String getValue(Class<T> cls,long attr) {
 		Map<Long,BaseDict>  tmp = cache.getMap(cls);
 		return tmp.get(attr).getValue();
 	}
+	
 	/**
-	 * 获取数据字典List
-	 * @param cls
+	 * 
+	 * @param cls 字典
+	 * @return 获取数据字典List
 	 */
 	public static <T extends BaseDict>  List<BaseDict> getList(Class<T> cls) {
 		Map<Long,BaseDict>  tmp = cache.getMap(cls);
 		return Lists.newArrayList(tmp.values());
 	}
 	/**
-	 * 获取数据字典cacheKey
-	 * @param cls
+	 * 
+	 * @param cls 字典
+	 * @param attr 字典属性
+	 * @return 获取数据字典cacheKey
 	 */
 	public static <T extends BaseDict>  String getCacheKey(Class<T> cls,long attr) {
 		Map<Long,BaseDict>  tmp = cache.getMap(cls);

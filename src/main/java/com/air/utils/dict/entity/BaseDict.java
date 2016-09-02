@@ -68,8 +68,8 @@ public class BaseDict implements Dict, Serializable {
 	private long parentId;//属性的父类
 
 	/**
-	 * 缓存KEY,唯一
-	 * @return
+	 * 
+	 * @return 缓存KEY,唯一
 	 */
 	public final String getKey() {
 		return new StringBuilder("dict.cache.").append(company).append(".").append(project).append(".").append(type).toString();

@@ -16,13 +16,14 @@ import com.air.utils.dict.entity.BaseDict;
  */
 public interface DBSyncAble {
 	/**
-	 *	获取所有数据字典 
+	 * 
+	 * @return 获取所有数据字典 
 	 */
 	List<BaseDict> getAllList();
 	
 	/**
 	 * 保存数据字典
-	 * @param dict 字典
+	 * @param dicts 字典
 	 */
 	void save(List<BaseDict> dicts);
 }
